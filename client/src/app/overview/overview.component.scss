@@ -1,0 +1,58 @@
+.wrapper {
+  background-color: black;
+  height: 100%;
+  color: white;
+}
+
+h1 {
+  margin-top: 0;
+  padding: 3rem 7rem;
+  font-size: 5rem;
+}
+
+.score-wrapper {
+  display: flex;
+  margin-right: 10rem;
+}
+
+.scores {
+  flex: 1;
+  padding: 0 1rem 0 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1rem 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: .5rem 2rem;
+  font-weight: normal;
+}
+
+.score {
+  height: 3rem;
+  margin: .5rem 0;
+  background-color: green;
+  position: relative;
+
+  .score-value {
+    position: relative;
+    left: calc(100% + 1rem);
+    font-size: 2rem;
+    top: .25rem;
+  }
+}
+
+.steps {
+  display: flex;
+
+  :last-child {
+    width: 0;
+  }
+
+  * {
+    width: 25%;
+  }
+}

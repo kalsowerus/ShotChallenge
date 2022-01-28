@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <h1>Schöttli-Challenge</h1>
+
+  <div class="score-wrapper">
+    <div class="team-list">
+      <h2 *ngFor="let team of (sortedTeams$ | async)">{{team.name}}</h2>
+    </div>
+    <div class="scores">
+      <div *ngFor="let score of (scores$ | async)" class="score" [style.width]="(score.percentage || 0) + '%'">
+        <span class="score-value">{{score.score}}</span>
+      </div>
+      <div class="steps">
+        <div *ngFor="let step of (steps$ | async)" class="step">{{step}}</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <h2>Schöttli-Börse</h2>
+  <div *ngFor="let rate of (sortedRates$ | async)">
+    <h3>{{rate.name}}: {{rate.rate}}</h3>
+  </div>
+</div>
