@@ -2,7 +2,10 @@ INSERT INTO Team (name)
 VALUES
        ('Oktaväsumpfer Büsserach'),
        ('Hälmlibieger Röschenz'),
-       ('Hirzefäger Breitenbach');
+       ('Hirzefäger Breitenbach'),
+       ('Birsgugger Laufen'),
+       ('Barocker Laufenburg'),
+       ('Lumpesammler Zwingen');
 
 INSERT INTO Shot (name)
 VALUES
