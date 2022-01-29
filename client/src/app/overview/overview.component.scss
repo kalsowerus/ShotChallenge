@@ -2,6 +2,7 @@
   background-color: black;
   height: 100%;
   color: white;
+  padding: 0 3rem;
 }
 
 h1 {
@@ -12,17 +13,23 @@ h1 {
 
 .score-wrapper {
   display: flex;
-  margin-right: 10rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
 }
 
 .scores {
   flex: 1;
-  padding: 0 1rem 0 0;
+  padding: 0 2rem 0 0;
 }
 
 h2 {
   font-size: 2rem;
   margin: 1rem 2rem;
+
+  &.title {
+    font-size: 2.5rem;
+    margin-left: 5rem;
+  }
 }
 
 h3 {
@@ -34,26 +41,49 @@ h3 {
 .score {
   height: 3rem;
   margin: .5rem 0;
-  background-color: green;
+  background-color: blue;
   position: relative;
 
   .score-value {
     position: relative;
     left: calc(100% + 1rem);
     font-size: 2rem;
-    top: .25rem;
+    top: .5rem;
   }
 }
 
 .steps {
-  display: flex;
-
-  :last-child {
-    width: 0;
-  }
+  padding-top: .5rem;
+  overflow: visible;
+  white-space: nowrap;
 
   * {
     width: 25%;
+  }
+
+  *:not(:last-child) {
+    border-top: 1px solid white;
+  }
+
+  .step-wrapper {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .step {
+    position: relative;
+    left: -50%;
+    font-size: 1.5rem;
+  }
+
+  .step-wrapper::before {
+    display: block;
+    content: ' ';
+    position: relative;
+    border-left: 1px solid white;
+    width: 0;
+    height: .7rem;
+    top: -.7rem;
   }
 }
 

@@ -10,15 +10,16 @@
         <span class="score-value">{{score.score}}</span>
       </div>
       <div class="steps">
-        <div *ngFor="let step of (steps$ | async)" class="step">{{step}}</div>
+        <div *ngFor="let step of (steps$ | async)" class="step-wrapper">
+          <span>
+            <span class="step">{{step}}</span>
+          </span>
+        </div>
       </div>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
 
-  <h2>Schöttli-Kurse</h2>
+  <h2 class="title">Schöttli-Kurse</h2>
   <div class="rate-wrapper">
     <div class="rate" *ngFor="let rate of (sortedRates$ | async)">
       <h3>{{rate.name}}: {{rate.rate}}</h3>
