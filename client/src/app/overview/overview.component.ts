@@ -18,7 +18,7 @@ export class OverviewComponent implements OnInit {
   );
   public maxScore$ = this.teams$.pipe(
     map(teams => teams.map(team => team.score).reduce((a, b) => Math.max(a, b), 0)),
-    map(maxScore => Math.ceil(maxScore / 100) * 100)
+    map(maxScore => Math.ceil((maxScore + 1) / 100) * 100)
   );
   public steps$ = this.maxScore$.pipe(
     map(maxScore => [0, maxScore / 4, maxScore / 2, maxScore / 4 * 3, maxScore])
