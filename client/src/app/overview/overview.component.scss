@@ -5,10 +5,20 @@
   padding: 0 3rem;
 }
 
+.title-wrapper {
+  display: flex;
+}
+
 h1 {
   margin: 0;
-  padding: 3rem 7rem;
+  padding: 3rem 7rem 3rem 0;
   font-size: 5rem;
+  line-height: 5rem;
+}
+
+.logo {
+  height: 9rem;
+  margin: 1rem 3rem;
 }
 
 .score-wrapper {
