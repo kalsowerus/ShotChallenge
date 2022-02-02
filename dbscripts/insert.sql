@@ -1,11 +1,9 @@
 INSERT INTO Team (name)
 VALUES
-       ('Oktaväsumpfer Büsserach'),
-       ('Hälmlibieger Röschenz'),
        ('Hirzefäger Breitenbach'),
        ('Birsgugger Laufen'),
-       ('Barocker Laufenburg'),
-       ('Lumpesammler Zwingen');
+       ('Lättguuger Winikon'),
+       ('Büchelgrübler Zunzgen');
 
 INSERT INTO Shot (name)
 VALUES
