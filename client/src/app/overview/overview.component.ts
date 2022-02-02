@@ -14,7 +14,8 @@ export class OverviewComponent implements OnInit {
 
   public teams$ = new BehaviorSubject<Team[]>([]);
   public sortedTeams$ = this.teams$.pipe(
-    map(teams => teams.sort((a, b) => b.score - a.score))
+    map(teams => teams.sort((a, b) => b.score - a.score)),
+    map(teams => teams.map(team => ({...team, shortName: team.name.split(' ')[0], city: team.name.split(' ')[1]})))
   );
   public maxScore$ = this.teams$.pipe(
     map(teams => teams.map(team => team.score).reduce((a, b) => Math.max(a, b), 0)),

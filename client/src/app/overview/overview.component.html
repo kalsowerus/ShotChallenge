@@ -6,7 +6,10 @@
 
   <div class="score-wrapper">
     <div class="team-list">
-      <h2 *ngFor="let team of (sortedTeams$ | async)">{{team.name}}</h2>
+      <h2 *ngFor="let team of (sortedTeams$ | async)">
+        <span class="main">{{team.shortName}}</span>
+        <span class="small">{{team.city}}</span>
+      </h2>
     </div>
     <div class="scores">
       <div *ngFor="let score of (scores$ | async)" class="score" [style.width]="(score.percentage || 0) + '%'">

@@ -2,7 +2,7 @@
   background-color: black;
   height: 100%;
   color: white;
-  padding: 0 3rem;
+  padding: 0 2vw;
 }
 
 .title-wrapper {
@@ -11,61 +11,67 @@
 
 h1 {
   margin: 0;
-  padding: 3rem 7rem 3rem 0;
-  font-size: 5rem;
-  line-height: 5rem;
+  padding: 3vh 0;
+  font-size: 7vh;
+  line-height: 7vh;
 }
 
 .logo {
-  height: 9rem;
-  margin: 1rem 3rem;
+  height: 12vh;
+  margin: 1vh 2vw;
 }
 
 .score-wrapper {
   display: flex;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4vh;
   overflow: hidden;
 }
 
 .scores {
   flex: 1;
-  padding: 0 5rem 0 0;
+  padding: 0 3vw 0 0;
 }
 
 h2 {
-  font-size: 2rem;
-  margin: 0;
-  padding: 1rem 2rem .5rem;
-  line-height: 2rem;
+  font-size: 5vh;
+  margin: 1vh 2vw;
+  line-height: 5vh;
+  display: flex;
+  flex-direction: column;
 
   &.title {
-    font-size: 2.5rem;
-    margin-left: 5rem;
+    font-size: 4vh;
+    margin-left: 2vw;
+  }
+
+  span.small {
+    font-size: 3vh;
+    line-height: 3vh;
   }
 }
 
 h3 {
-  font-size: 2rem;
-  margin: .5rem 2rem;
+  font-size: 4vh;
+  margin: .5vh 1vw;
   font-weight: normal;
 }
 
 .score {
-  height: 3rem;
-  margin: .5rem 0;
+  height: 8vh;
+  margin: 1vh 0;
   background-color: blue;
   position: relative;
 
   .score-value {
     position: relative;
-    left: calc(100% + 1rem);
-    font-size: 2rem;
-    top: .5rem;
+    left: calc(100% + .5vw);
+    font-size: 4vh;
+    top: 2vh;
   }
 }
 
 .steps {
-  padding-top: .5rem;
+  padding-top: .5vh;
   overflow: visible;
   white-space: nowrap;
 
@@ -74,7 +80,7 @@ h3 {
   }
 
   *:not(:last-child) {
-    border-top: 1px solid white;
+    border-top: .2vh solid white;
   }
 
   .step-wrapper {
@@ -85,24 +91,25 @@ h3 {
   .step {
     position: relative;
     left: -50%;
-    font-size: 1.5rem;
+    font-size: 3vh;
   }
 
   .step-wrapper::before {
     display: block;
     content: ' ';
     position: relative;
-    border-left: 1px solid white;
+    border-left: .2vh solid white;
     width: 0;
-    height: .7rem;
-    top: -.7rem;
+    height: 1vh;
+    top: -1vh;
   }
 }
 
 .rate-wrapper {
   display: flex;
+  flex-direction: column;
 
   .rate {
-    min-width: 400px;
+    min-width: 1vw;
   }
 }
