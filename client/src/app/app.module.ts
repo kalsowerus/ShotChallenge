@@ -7,13 +7,17 @@ import {AdminComponent} from "./admin/admin.component";
 import {OverviewComponent} from "./overview/overview.component";
 import {MenuComponent} from "./menu/menu.component";
 import {HttpClientModule} from "@angular/common/http";
+import {SlideshowComponent} from "./slideshow/slideshow.component";
+import {ProgramComponent} from "./program/program.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     AdminComponent,
-    OverviewComponent
+    OverviewComponent,
+    SlideshowComponent,
+    ProgramComponent
   ],
   imports: [
     BrowserModule,
