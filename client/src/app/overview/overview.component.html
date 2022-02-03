@@ -11,9 +11,11 @@
         <span class="small">{{team.city}}</span>
       </h2>
     </div>
-    <div class="scores">
-      <div *ngFor="let score of (scores$ | async)" class="score" [style.width]="(score.percentage || 0) + '%'">
-        <span class="score-value">{{score.score}}</span>
+    <div class="scores-list">
+      <div class="scores">
+        <div *ngFor="let score of (scores$ | async)" class="score" [style.width]="(score.percentage || 0) + '%'">
+          <span class="score-value">{{score.score}}</span>
+        </div>
       </div>
       <div class="steps">
         <div *ngFor="let step of (steps$ | async)" class="step-wrapper">

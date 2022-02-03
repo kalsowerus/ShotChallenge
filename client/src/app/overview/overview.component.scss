@@ -21,23 +21,10 @@ h1 {
   margin: 1vh 2vw;
 }
 
-.score-wrapper {
-  display: flex;
-  margin-bottom: 4vh;
-  overflow: hidden;
-}
-
-.scores {
-  flex: 1;
-  padding: 0 3vw 0 0;
-}
-
 h2 {
   font-size: 5vh;
   margin: 1vh 2vw;
   line-height: 5vh;
-  display: flex;
-  flex-direction: column;
 
   &.title {
     font-size: 4vh;
@@ -56,6 +43,38 @@ h3 {
   font-weight: normal;
 }
 
+.team-list {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.score-wrapper {
+  display: flex;
+  margin-bottom: 8vh;
+  overflow: visible;
+  height: 50vh;
+  padding-right: 8vw;
+}
+
+.scores-list {
+  flex: 1;
+}
+
+.scores {
+  height: 100%;
+  padding: 0 3vw 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .score {
   height: 8vh;
   margin: 1vh 0;
@@ -66,12 +85,15 @@ h3 {
     position: relative;
     left: calc(100% + .5vw);
     font-size: 4vh;
-    top: 2vh;
+    top: calc(50% - 2vh);
   }
 }
 
 .steps {
-  padding-top: .5vh;
+  flex: 0 0;
+  height: 0;
+  position: relative;
+  top: 1vh;
   overflow: visible;
   white-space: nowrap;
 
@@ -92,6 +114,7 @@ h3 {
     position: relative;
     left: -50%;
     font-size: 3vh;
+    line-height: 3vh;
   }
 
   .step-wrapper::before {
