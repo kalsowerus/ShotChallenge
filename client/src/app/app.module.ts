@@ -9,6 +9,7 @@ import {MenuComponent} from "./menu/menu.component";
 import {HttpClientModule} from "@angular/common/http";
 import {SlideshowComponent} from "./slideshow/slideshow.component";
 import {ProgramComponent} from "./program/program.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ProgramComponent} from "./program/program.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

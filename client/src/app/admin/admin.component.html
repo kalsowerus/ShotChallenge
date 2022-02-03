@@ -1,6 +1,6 @@
 <h1>Admin</h1>
 
-<form>
+<form (ngSubmit)="submit()">
   <h2>Gugge</h2>
   <ng-container *ngFor="let team of (teams$ | async)">
     <input type="radio" name="team" [id]="'team' + team.id" [value]="team.id" (change)="onTeamChange($any($event.target).value)" />
