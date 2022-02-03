@@ -1,2 +1,5 @@
 <app-overview [hidden]="(slide$ | async) !== 0"></app-overview>
-<app-program [hidden]="(slide$ | async) !== 1"></app-program>
+<div class="wrapper" [hidden]="(slide$ | async) !== 1">
+  <app-program [hidden]="!(showProgram$ | async)"></app-program>
+  <app-hirzefaeger [hidden]="!(showHirzefaeger$ | async)"></app-hirzefaeger>
+</div>

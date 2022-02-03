@@ -10,6 +10,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {SlideshowComponent} from "./slideshow/slideshow.component";
 import {ProgramComponent} from "./program/program.component";
 import {FormsModule} from "@angular/forms";
+import {HirzefaegerComponent} from "./bands/hirzefaeger/hirzefaeger.component";
+import {BirsguggerComponent} from "./bands/birsgugger/birsgugger.component";
+import {LaettguugerComponent} from "./bands/laettguuger/laettguuger.component";
+import {BuechelgrueblerComponent} from "./bands/buechelgruebler/buechelgruebler.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import {FormsModule} from "@angular/forms";
     AdminComponent,
     OverviewComponent,
     SlideshowComponent,
-    ProgramComponent
+    ProgramComponent,
+    HirzefaegerComponent,
+    BirsguggerComponent,
+    LaettguugerComponent,
+    BuechelgrueblerComponent
   ],
   imports: [
     BrowserModule,
