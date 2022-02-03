@@ -1,16 +1,24 @@
-* {
+.wrapper {
+  background-color: black;
+  height: 100%;
   color: white;
+  padding: 0 2vw;
 }
 
-.wrapper {
-  height: 100%;
-  background-color: black;
+.title-wrapper {
+  display: flex;
 }
 
 h1 {
-  font-size: 7vh;
   margin: 0;
-  padding: 2vw 3vw;
+  padding: 3vh 0;
+  font-size: 7vh;
+  line-height: 7vh;
+}
+
+.logo {
+  height: 12vh;
+  margin: 1vh 2vw;
 }
 
 .timetable-wrapper {
