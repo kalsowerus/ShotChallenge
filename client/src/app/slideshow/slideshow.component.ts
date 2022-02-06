@@ -14,18 +14,20 @@ export class SlideshowComponent implements OnInit {
     map(x => x % 2)
   );
   private now$ = new Subject<Date>();
-  public showHirzefaeger$ = this.isShow('23:55', '0:15', true);
-  public showBirsgugger$ = this.isShow('21:55', '22:15', false);
-  public showLaettguuger$ = this.isShow('22:25', '22:45', false);
-  public showBuechelgruebler$ = this.isShow('23:25', '23:45', false);
+  public showHirzefaeger$ = this.isShow('21:55', '22:30', false);
+  public showBirsgugger$ = this.isShow('0:55', '1:30', false);
+  public showLaettguuger$ = this.isShow('20:55', '21:30', false);
+  public showBuechelgruebler$ = this.isShow('23:55', '0:30', true);
+  public showOktavaesumpfer$ = this.isShow('22:55', '23:30', false);
   public showProgram$ = combineLatest([
     this.showHirzefaeger$,
     this.showBirsgugger$,
     this.showLaettguuger$,
-    this.showBuechelgruebler$
+    this.showBuechelgruebler$,
+    this.showOktavaesumpfer$
   ]).pipe(
-    map(([showHirzefaeger, showBirsgugger, showLaettguuger, showBuechelgruebler]) =>
-      !showHirzefaeger && !showBirsgugger && !showLaettguuger && !showBuechelgruebler),
+    map(([showHirzefaeger, showBirsgugger, showLaettguuger, showBuechelgruebler, showOktavaesumpfer]) =>
+      !showHirzefaeger && !showBirsgugger && !showLaettguuger && !showBuechelgruebler && !showOktavaesumpfer),
     startWith(true)
   );
 

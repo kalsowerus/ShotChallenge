@@ -1,5 +1,9 @@
 <app-overview [hidden]="(slide$ | async) !== 0"></app-overview>
 <div class="wrapper" [hidden]="(slide$ | async) !== 1">
   <app-program [hidden]="!(showProgram$ | async)"></app-program>
+  <app-birsgugger [hidden]="!(showBirsgugger$ | async)"></app-birsgugger>
+  <app-buechelgruebler [hidden]="!(showBuechelgruebler$ | async)"></app-buechelgruebler>
   <app-hirzefaeger [hidden]="!(showHirzefaeger$ | async)"></app-hirzefaeger>
+  <app-laettguuger [hidden]="!(showLaettguuger$ | async)"></app-laettguuger>
+  <app-oktavaesumpfer [hidden]="!(showOktavaesumpfer$ | async)"></app-oktavaesumpfer>
 </div>

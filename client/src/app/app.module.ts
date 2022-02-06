@@ -14,6 +14,7 @@ import {HirzefaegerComponent} from "./bands/hirzefaeger/hirzefaeger.component";
 import {BirsguggerComponent} from "./bands/birsgugger/birsgugger.component";
 import {LaettguugerComponent} from "./bands/laettguuger/laettguuger.component";
 import {BuechelgrueblerComponent} from "./bands/buechelgruebler/buechelgruebler.component";
+import {OktavaesumpferComponent} from "./bands/oktavaesumpfer/oktavaesumpfer.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {BuechelgrueblerComponent} from "./bands/buechelgruebler/buechelgruebler.
     HirzefaegerComponent,
     BirsguggerComponent,
     LaettguugerComponent,
-    BuechelgrueblerComponent
+    BuechelgrueblerComponent,
+    OktavaesumpferComponent
   ],
   imports: [
     BrowserModule,
