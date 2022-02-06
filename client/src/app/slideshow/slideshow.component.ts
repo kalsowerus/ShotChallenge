@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {BehaviorSubject, combineLatest, map, Observable, scan, startWith, Subject} from "rxjs";
+import {BehaviorSubject, combineLatest, map, Observable, scan, startWith, Subject, withLatestFrom} from "rxjs";
+import {Slide} from "./slide";
 
 @Component({
   selector: 'app-slideshow',
@@ -7,32 +8,44 @@ import {BehaviorSubject, combineLatest, map, Observable, scan, startWith, Subjec
   styleUrls: ['./slideshow.component.scss']
 })
 export class SlideshowComponent implements OnInit {
-  private nextSlide$ = new Subject<void>();
-  public slide$ = this.nextSlide$.pipe(
-    startWith(0),
-    scan((acc) => acc + 1, 0),
-    map(x => x % 2)
-  );
-  private now$ = new Subject<Date>();
-  public showHirzefaeger$ = this.isShow('21:55', '22:30', false);
+  public readonly Slide = Slide;
+
+  private now$ = new BehaviorSubject<Date>(new Date());
+  public showHirzefaeger$ = this.isShow('11:55', '22:30', false);
   public showBirsgugger$ = this.isShow('0:55', '1:30', false);
   public showLaettguuger$ = this.isShow('20:55', '21:30', false);
   public showBuechelgruebler$ = this.isShow('23:55', '0:30', true);
   public showOktavaesumpfer$ = this.isShow('22:55', '23:30', false);
-  public showProgram$ = combineLatest([
+  private nextSlide$ = new Subject<void>();
+  private currentSlides$ = combineLatest([
     this.showHirzefaeger$,
     this.showBirsgugger$,
     this.showLaettguuger$,
     this.showBuechelgruebler$,
     this.showOktavaesumpfer$
   ]).pipe(
-    map(([showHirzefaeger, showBirsgugger, showLaettguuger, showBuechelgruebler, showOktavaesumpfer]) =>
-      !showHirzefaeger && !showBirsgugger && !showLaettguuger && !showBuechelgruebler && !showOktavaesumpfer),
-    startWith(true)
+    map(([showHirzefaeger, showBirsgugger, showLaettguuger, showBuechelgruebler, showOktavaesumpfer]) => {
+      const slides = [Slide.OVERVIEW, Slide.PROGRAM];
+      if (showHirzefaeger) slides.push(Slide.HIRZEFAEGER);
+      if (showBirsgugger) slides.push(Slide.BIRSGUGGER);
+      if (showLaettguuger) slides.push(Slide.LAETTGUUGER);
+      if (showBuechelgruebler) slides.push(Slide.BUECHELGRUEBLER);
+      if (showOktavaesumpfer) slides.push(Slide.OKTAVAESUMPFER);
+      return slides;
+    })
+  );
+  public slide$ = this.nextSlide$.pipe(
+    startWith(0),
+    scan((acc) => acc + 1, 0),
+    withLatestFrom(this.currentSlides$),
+    map(([counter, slides]) => {
+      counter = counter % slides.length;
+      return slides[counter];
+    })
   );
 
   ngOnInit(): void {
-    setInterval(() => this.nextSlide$.next(), 1000);
+    setInterval(() => this.nextSlide$.next(), 10000);
     setInterval(() => this.now$.next(new Date()), 10000);
   }
 

@@ -1,9 +1,9 @@
-<app-overview [hidden]="(slide$ | async) !== 0"></app-overview>
-<div class="wrapper" [hidden]="(slide$ | async) !== 1">
-  <app-program [hidden]="!(showProgram$ | async)"></app-program>
-  <app-birsgugger [hidden]="!(showBirsgugger$ | async)"></app-birsgugger>
-  <app-buechelgruebler [hidden]="!(showBuechelgruebler$ | async)"></app-buechelgruebler>
-  <app-hirzefaeger [hidden]="!(showHirzefaeger$ | async)"></app-hirzefaeger>
-  <app-laettguuger [hidden]="!(showLaettguuger$ | async)"></app-laettguuger>
-  <app-oktavaesumpfer [hidden]="!(showOktavaesumpfer$ | async)"></app-oktavaesumpfer>
+<app-overview [hidden]="(slide$ | async) !== Slide.OVERVIEW"></app-overview>
+<div class="wrapper" [hidden]="(slide$ | async) === Slide.OVERVIEW">
+  <app-program [hidden]="(slide$ | async) !== Slide.PROGRAM"></app-program>
+  <app-birsgugger [hidden]="(slide$ | async) !== Slide.BIRSGUGGER"></app-birsgugger>
+  <app-buechelgruebler [hidden]="(slide$ | async) !== Slide.BUECHELGRUEBLER"></app-buechelgruebler>
+  <app-hirzefaeger [hidden]="(slide$ | async) !== Slide.HIRZEFAEGER"></app-hirzefaeger>
+  <app-laettguuger [hidden]="(slide$ | async) !== Slide.LAETTGUUGER"></app-laettguuger>
+  <app-oktavaesumpfer [hidden]="(slide$ | async) !== Slide.OKTAVAESUMPFER"></app-oktavaesumpfer>
 </div>
