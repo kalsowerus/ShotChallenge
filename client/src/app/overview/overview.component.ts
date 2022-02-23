@@ -42,11 +42,11 @@ export class OverviewComponent implements OnInit {
 
   loadValues(): void {
     console.log("loading");
-    this.http.get('http://localhost:8080/teams').pipe(
+    this.http.get('http://192.168.1.1:8080/teams').pipe(
       first(),
     ).subscribe((teams: any) => this.teams$.next(teams));
 
-    this.http.get('http://localhost:8080/rates').pipe(
+    this.http.get('http://192.168.1.1:8080/rates').pipe(
       first()
     ).subscribe((rates: any) => this.rates$.next(rates));
   }

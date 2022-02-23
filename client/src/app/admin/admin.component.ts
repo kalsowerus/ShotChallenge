@@ -21,11 +21,11 @@ export class AdminComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/teams').pipe(
+    this.http.get('http://192.168.1.1:8080/teams').pipe(
       first(),
     ).subscribe((teams: any) => this.teams$.next(teams));
 
-    this.http.get('http://localhost:8080/shots').pipe(
+    this.http.get('http://192.168.1.1:8080/shots').pipe(
       first()
     ).subscribe((shots: any) => this.shots$.next(shots));
   }
