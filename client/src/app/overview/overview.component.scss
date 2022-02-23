@@ -70,14 +70,14 @@ h3 {
 
 .scores {
   height: 100%;
-  padding: 0 3vw 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .score {
-  height: 8vh;
+  height: 11vh;
   margin: 1vh 0;
   background-color: blue;
   position: relative;
