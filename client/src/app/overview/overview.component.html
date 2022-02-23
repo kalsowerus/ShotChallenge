@@ -30,7 +30,7 @@
   <h2 class="title">Schöttli-Kurse</h2>
   <div class="rate-wrapper">
     <div class="rate" *ngFor="let rate of (sortedRates$ | async)">
-      <h3>{{rate.name}}: {{rate.rate}} Pkt.</h3>
+      <h3>{{rate.name}}: {{rate.rate}} {{rate.rate === '1' ? 'Punkt' : 'Punkte'}}</h3>
     </div>
   </div>
 </div>
