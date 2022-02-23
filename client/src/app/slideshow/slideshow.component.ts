@@ -11,11 +11,11 @@ export class SlideshowComponent implements OnInit {
   public readonly Slide = Slide;
 
   private now$ = new BehaviorSubject<Date>(new Date());
-  public showHirzefaeger$ = this.isShow('11:55', '22:30', false);
-  public showBirsgugger$ = this.isShow('0:55', '1:30', false);
-  public showLaettguuger$ = this.isShow('20:55', '21:30', false);
-  public showBuechelgruebler$ = this.isShow('23:55', '0:30', true);
-  public showOktavaesumpfer$ = this.isShow('22:55', '23:30', false);
+  public showHirzefaeger$ = this.isShow('0:58', '1:22', false);
+  public showBirsgugger$ = this.isShow('21:58', '22:22', false);
+  public showLaettguuger$ = this.isShow('20:58', '21:22', false);
+  public showBuechelgruebler$ = this.isShow('23:58', '0:22', true);
+  public showOktavaesumpfer$ = this.isShow('22:58', '23:22', false);
   private nextSlide$ = new Subject<void>();
   private currentSlides$ = combineLatest([
     this.showHirzefaeger$,
