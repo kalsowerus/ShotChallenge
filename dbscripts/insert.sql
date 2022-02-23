@@ -9,4 +9,5 @@ INSERT INTO Shot (name)
 VALUES
        ('Bloody Mary'),
        ('Blue Kamikaze'),
-       ('Berliner Luft');
+       ('Berliner Luft'),
+       ('Jägermeister');

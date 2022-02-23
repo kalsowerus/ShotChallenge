@@ -132,6 +132,7 @@ h3 {
 .rate-wrapper {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   .rate {
     min-width: 1vw;
