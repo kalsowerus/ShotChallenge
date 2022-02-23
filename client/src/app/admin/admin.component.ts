@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
       alert("Bitte formular ausüllen");
     }
 
-    this.http.post('http://localhost:8080/shots', {team: this.teamId, shot: this.shotId, amount: this.amount}).pipe(
+    this.http.post('http://192.168.1.1:8080/shots', {team: this.teamId, shot: this.shotId, amount: this.amount}).pipe(
       first()
     ).subscribe(result => {
       if (result) {
