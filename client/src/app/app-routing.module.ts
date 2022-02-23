@@ -9,6 +9,7 @@ import {HirzefaegerComponent} from "./bands/hirzefaeger/hirzefaeger.component";
 import {BirsguggerComponent} from "./bands/birsgugger/birsgugger.component";
 import {LaettguugerComponent} from "./bands/laettguuger/laettguuger.component";
 import {BuechelgrueblerComponent} from "./bands/buechelgruebler/buechelgruebler.component";
+import {OktavaesumpferComponent} from "./bands/oktavaesumpfer/oktavaesumpfer.component";
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'hirzefaeger', component: HirzefaegerComponent },
   { path: 'birsgugger', component: BirsguggerComponent },
   { path: 'laettguuger', component: LaettguugerComponent },
-  { path: 'buechelgruebler', component: BuechelgrueblerComponent }
+  { path: 'buechelgruebler', component: BuechelgrueblerComponent },
+  { path: 'oktavaesumpfer', component: OktavaesumpferComponent }
 ];
 
 @NgModule({
