@@ -11,13 +11,13 @@ import java.util.List;
 @RestController
 public class AppController {
 
-    @CrossOrigin(origins = "http://192.168.1.1:80")
+    @CrossOrigin(origins = "http://192.168.1.1")
     @GetMapping("/")
     public String getIndex() {
         return "test";
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:80")
+    @CrossOrigin(origins = "http://192.168.1.1")
     @GetMapping("/teams")
     public List<TeamOverview> getTeams() {
         try(Connection connection = getConnection();
@@ -40,7 +40,7 @@ public class AppController {
         }
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:80")
+    @CrossOrigin(origins = "http://192.168.1.1")
     @GetMapping("/rates")
     public List<Rate> getRates() {
         try(Connection connection = getConnection();
@@ -64,7 +64,7 @@ public class AppController {
         }
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:80")
+    @CrossOrigin(origins = "http://192.168.1.1")
     @GetMapping("/shots")
     public List<Shot> getShots() {
         try(Connection connection = getConnection();
@@ -86,7 +86,7 @@ public class AppController {
         }
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:80")
+    @CrossOrigin(origins = "http://192.168.1.1")
     @PostMapping("/shots")
     public boolean postShots(@RequestBody ShotForTeam shotForTeam) {
         try(Connection connection = getConnection();
