@@ -54,7 +54,7 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
   );
 
   ngOnInit(): void {
-    setInterval(() => this.nextSlide$.next(), 1 * 1000 /* 3s */);
+    setInterval(() => this.nextSlide$.next(), 10 * 1000 /* 10s */);
   }
 
   ngAfterViewInit(): void {
