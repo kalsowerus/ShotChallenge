@@ -15,7 +15,14 @@ export class OverviewComponent implements OnInit {
   public teams$ = new BehaviorSubject<Team[]>([]);
   public sortedTeams$ = this.teams$.pipe(
     map(teams => teams.sort((a, b) => b.score - a.score)),
-    map(teams => teams.map(team => ({...team, shortName: team.name.split(' ')[0], city: team.name.split(' ')[1]})))
+    map(teams => teams.map(team => {
+      const split = team.name.split(' ');
+      return {
+        ...team,
+        shortName: split.slice(0, -1).join(' '),
+        city: split[split.length - 1]
+      };
+    }))
   );
   public maxScore$ = this.teams$.pipe(
     map(teams => teams.map(team => team.score).reduce((a, b) => Math.max(a, b), 0)),
@@ -26,11 +33,9 @@ export class OverviewComponent implements OnInit {
   );
   public scores$ = this.sortedTeams$.pipe(
     withLatestFrom(this.maxScore$),
-    map(([teams, maxScore]) => teams.map(team => ({score: team.score, percentage: 100 / maxScore * team.score})))
-  );
-  public rates$ = new BehaviorSubject<Rate[]>([]);
-  public sortedRates$ = this.rates$.pipe(
-    map(rates => rates.sort((a, b) => a.name.localeCompare(b.name)))
+    map(([teams, maxScore]: [Team[], number]) =>
+      teams.map(team => ({score: team.score, percentage: 100 / maxScore * team.score}))
+    )
   );
 
   constructor(private http: HttpClient) {}
@@ -42,12 +47,8 @@ export class OverviewComponent implements OnInit {
 
   loadValues(): void {
     console.log("loading");
-    this.http.get('http://192.168.1.1:8080/teams').pipe(
+    this.http.get('http://localhost:8080/teams').pipe(
       first(),
     ).subscribe((teams: any) => this.teams$.next(teams));
-
-    this.http.get('http://192.168.1.1:8080/rates').pipe(
-      first()
-    ).subscribe((rates: any) => this.rates$.next(rates));
   }
 }

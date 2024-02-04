@@ -23,9 +23,9 @@ h1 {
 }
 
 h2 {
-  font-size: 5vh;
+  font-size: 3vh;
   margin: 1vh 2vw;
-  line-height: 5vh;
+  line-height: 3vh;
 
   &.title {
     font-size: 4vh;
@@ -33,8 +33,8 @@ h2 {
   }
 
   span.small {
-    font-size: 3vh;
-    line-height: 3vh;
+    font-size: 2vh;
+    line-height: 2vh;
   }
 }
 
@@ -60,7 +60,7 @@ h3 {
   display: flex;
   margin-bottom: 8vh;
   overflow: visible;
-  height: 50vh;
+  height: 80vh;
   padding-right: 8vw;
 }
 
@@ -79,7 +79,7 @@ h3 {
 .score {
   height: 11vh;
   margin: 1vh 0;
-  background-color: blue;
+  background-color: deeppink;
   position: relative;
 
   .score-value {

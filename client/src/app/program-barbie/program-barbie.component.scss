@@ -1,0 +1,62 @@
+.wrapper {
+  background-color: black;
+  height: 100%;
+  color: white;
+  padding: 0 2vw;
+}
+
+.title-wrapper {
+  display: flex;
+}
+
+h1 {
+  margin: 0;
+  padding: 3vh 0;
+  font-size: 7vh;
+  line-height: 7vh;
+
+  span {
+    color: deeppink;
+  }
+}
+
+.logo {
+  height: 12vh;
+  margin: 1vh 2vw;
+}
+
+.timetable-wrapper {
+  display: flex;
+  column-gap: 5vw;
+  height: 80vh;
+  padding: 0 4vw;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .times-wrapper {
+    flex: 1;
+  }
+
+  .events-wrapper {
+    flex: 5;
+  }
+
+  .time {
+    font-size: 8vh;
+    text-align: right;
+
+    > .mins {
+      font-size: 5vh;
+      position: relative;
+      top: -2vh;
+    }
+  }
+
+  .event {
+    font-size: 8vh;
+  }
+}

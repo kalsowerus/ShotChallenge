@@ -8,13 +8,6 @@
     <br>
   </ng-container>
 
-  <h2>Shot</h2>
-  <ng-container *ngFor="let shot of (shots$ | async)">
-    <input type="radio" name="shot" [id]="'shot' + shot.id" [value]="shot.id" (change)="onShotChange($any($event.target).value)" />
-    <label [for]="'shot' + shot.id">{{shot.name}}</label>
-    <br>
-  </ng-container>
-
   <h2>Anzahl</h2>
   <input type="number" (change)="onAmountChange($any($event.target).value)" />
   <br>

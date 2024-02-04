@@ -1,0 +1,10 @@
+<ng-container *ngIf="(sponsor$ | async) as sponsor">
+  <app-albin-borer [hidden]="sponsor !== Sponsor.ALBIN_BORER"></app-albin-borer>
+  <app-jeker [hidden]="sponsor !== Sponsor.JEKER"></app-jeker>
+  <app-lack [hidden]="sponsor !== Sponsor.LACK"></app-lack>
+  <app-roth [hidden]="sponsor !== Sponsor.ROTH"></app-roth>
+  <app-schloessli [hidden]="sponsor !== Sponsor.SCHLOESSLI"></app-schloessli>
+  <app-severin-borer [hidden]="sponsor !== Sponsor.SEVERIN_BORER"></app-severin-borer>
+  <app-treuhand-amtshaus [hidden]="sponsor !== Sponsor.TREUHAND_AMTSHAUS"></app-treuhand-amtshaus>
+  <app-wolgemuth [hidden]="sponsor !== Sponsor.WOLGEMUTH"></app-wolgemuth>
+</ng-container>

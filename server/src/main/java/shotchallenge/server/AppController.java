@@ -11,13 +11,13 @@ import java.util.List;
 @RestController
 public class AppController {
 
-    @CrossOrigin(origins = "http://192.168.1.1:4200")
+    @CrossOrigin
     @GetMapping("/")
     public String getIndex() {
         return "test";
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:4200")
+    @CrossOrigin
     @GetMapping("/teams")
     public List<TeamOverview> getTeams() {
         try(Connection connection = getConnection();
@@ -40,31 +40,7 @@ public class AppController {
         }
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:4200")
-    @GetMapping("/rates")
-    public List<Rate> getRates() {
-        try(Connection connection = getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from Rates")) {
-
-            List<Rate> rates = new ArrayList<>();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                BigDecimal rate = resultSet.getBigDecimal("rate");
-                DecimalFormat decimalFormat = new DecimalFormat("###.#");
-                Rate rateObject = new Rate(id, name, decimalFormat.format(rate));
-                rates.add(rateObject);
-            }
-
-            return rates;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @CrossOrigin(origins = "http://192.168.1.1:4200")
+    @CrossOrigin
     @GetMapping("/shots")
     public List<Shot> getShots() {
         try(Connection connection = getConnection();
@@ -86,25 +62,16 @@ public class AppController {
         }
     }
 
-    @CrossOrigin(origins = "http://192.168.1.1:4200")
+    @CrossOrigin
     @PostMapping("/shots")
     public boolean postShots(@RequestBody ShotForTeam shotForTeam) {
         try(Connection connection = getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from Rates where id = " + shotForTeam.getShot())) {
-
-            if (!resultSet.next()) {
-                return false;
-            }
-
-            BigDecimal rate = resultSet.getBigDecimal("rate");
+            Statement statement = connection.createStatement()) {
 
             statement.executeUpdate(String.format(
-                    "INSERT INTO ShotsByTeam (team, shot, amount, rate) VALUES (%s, %s, %s, %s)",
+                    "INSERT INTO ShotsByTeam (team, amount) VALUES (%s, %s)",
                     shotForTeam.getTeam(),
-                    shotForTeam.getShot(),
-                    shotForTeam.getAmount(),
-                    rate));
+                    shotForTeam.getAmount()));
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

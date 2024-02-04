@@ -1,0 +1,10 @@
+export enum Sponsor {
+  ALBIN_BORER = 1,
+  JEKER,
+  LACK,
+  ROTH,
+  SCHLOESSLI,
+  SEVERIN_BORER,
+  TREUHAND_AMTSHAUS,
+  WOLGEMUTH
+}

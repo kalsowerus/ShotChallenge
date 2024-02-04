@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ShotChallenge.iml" filepath="$PROJECT_DIR$/.idea/ShotChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbscripts/dbscripts.iml" filepath="$PROJECT_DIR$/dbscripts/dbscripts.iml" />
     </modules>
   </component>
 </project>

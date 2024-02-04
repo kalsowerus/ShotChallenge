@@ -1,13 +1,12 @@
 INSERT INTO Team (name)
 VALUES
-       ('Hirzefäger Breitenbach'),
        ('Birsgugger Laufen'),
-       ('Lättguuger Winikon'),
-       ('Büchelgrübler Zunzgen');
-
-INSERT INTO Shot (name)
-VALUES
-       ('Bloody Mary'),
-       ('Blue Kamikaze'),
-       ('Berliner Luft'),
-       ('Jägermeister');
+       ('Bohneschränzer Mältige'),
+       ('Chläbber Pfludde Laufen'),
+       ('Chrottä Schliffer Seebä'),
+       ('Donnerwäschpi Fehre'),
+       ('Füdlichnübler Wangen ZH'),
+       ('Hirzefäger Breitenbach'),
+       ('Lady-Killers Laufen'),
+       ('Stritterä Wildsäu Gringel'),
+       ('Turboschnäggä Erschbl');

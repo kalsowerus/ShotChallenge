@@ -14,6 +14,7 @@ h1 {
   padding: 3vh 0;
   font-size: 7vh;
   line-height: 7vh;
+  color: deeppink;
 }
 
 .logo {
@@ -32,8 +33,15 @@ h2 {
   flex-wrap: wrap;
 
   img {
-    width: 40vw;
+    width: 50vw;
+    object-fit: cover;
   }
+}
+
+.panel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 
 .info-wrapper {

@@ -1,9 +1,7 @@
-<app-overview [hidden]="(slide$ | async) !== Slide.OVERVIEW"></app-overview>
-<div class="wrapper" [hidden]="(slide$ | async) === Slide.OVERVIEW">
-  <app-program [hidden]="(slide$ | async) !== Slide.PROGRAM"></app-program>
-  <app-birsgugger [hidden]="(slide$ | async) !== Slide.BIRSGUGGER"></app-birsgugger>
-  <app-buechelgruebler [hidden]="(slide$ | async) !== Slide.BUECHELGRUEBLER"></app-buechelgruebler>
-  <app-hirzefaeger [hidden]="(slide$ | async) !== Slide.HIRZEFAEGER"></app-hirzefaeger>
-  <app-laettguuger [hidden]="(slide$ | async) !== Slide.LAETTGUUGER"></app-laettguuger>
-  <app-oktavaesumpfer [hidden]="(slide$ | async) !== Slide.OKTAVAESUMPFER"></app-oktavaesumpfer>
-</div>
+<ng-container *ngIf="(slide$ | async) as slide">
+  <app-overview [hidden]="slide !== Slide.OVERVIEW"></app-overview>
+  <app-program-barbie [hidden]="slide !== Slide.PROGRAM_BARBIE"></app-program-barbie>
+  <app-program-ken [hidden]="slide !== Slide.PROGRAM_KEN"></app-program-ken>
+  <app-band [hidden]="slide !== Slide.BAND"></app-band>
+  <app-sponsor [hidden]="slide !== Slide.SPONSOR"></app-sponsor>
+</ng-container>
