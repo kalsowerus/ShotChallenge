@@ -18,7 +18,8 @@ export class SponsorComponent {
     Sponsor.SCHLOESSLI,
     Sponsor.SEVERIN_BORER,
     Sponsor.TREUHAND_AMTSHAUS,
-    Sponsor.WOLGEMUTH
+    Sponsor.WOLGEMUTH,
+    Sponsor.JEKER_DACH
   ];
   public sponsor$ = this.next$.pipe(
     startWith(0),

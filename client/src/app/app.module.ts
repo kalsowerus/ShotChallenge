@@ -31,6 +31,7 @@ import {ChlaebberPfluddeComponent} from "./bands/chlaebber-pfludde/chlaebber-pfl
 import {ChrottaeSchlifferComponent} from "./bands/chrottae-schliffer/chrottae-schliffer.component";
 import {LadyKillersComponent} from "./bands/lady-killers/lady-killers.component";
 import {ProgramBarbieComponent} from "./program-barbie/program-barbie.component";
+import {JekerDachComponent} from "./sponsors/jeker-dach/jeker-dach.component";
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import {ProgramBarbieComponent} from "./program-barbie/program-barbie.component"
     SchloessliComponent,
     SeverinBorerComponent,
     TreuhandAmtshausComponent,
-    WolgemuthComponent
+    WolgemuthComponent,
+    JekerDachComponent
   ],
   imports: [
     BrowserModule,

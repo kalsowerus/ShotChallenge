@@ -24,6 +24,7 @@ import {ChlaebberPfluddeComponent} from "./bands/chlaebber-pfludde/chlaebber-pfl
 import {ChrottaeSchlifferComponent} from "./bands/chrottae-schliffer/chrottae-schliffer.component";
 import {LadyKillersComponent} from "./bands/lady-killers/lady-killers.component";
 import {StritteraeWidlsaeuComponent} from "./bands/striterae-wildsaeu/stritterae-widlsaeu.component";
+import {JekerDachComponent} from "./sponsors/jeker-dach/jeker-dach.component";
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'severin-borer', component: SeverinBorerComponent },
   { path: 'treuhand-amtshaus', component: TreuhandAmtshausComponent },
   { path: 'wolgemuth', component: WolgemuthComponent },
+  { path: 'jeker-dach', component: JekerDachComponent },
 ];
 
 @NgModule({
