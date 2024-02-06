@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, first, Observable} from "rxjs";
 import {Team} from "../team";
 import {Shot} from "../shot";
+import {BACKEND_HOST} from "../constants";
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +20,7 @@ export class AdminComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/teams').pipe(
+    this.http.get(`http://${BACKEND_HOST}:8080/teams`).pipe(
       first(),
     ).subscribe((teams: any) => this.teams$.next(teams));
   }
@@ -37,7 +38,7 @@ export class AdminComponent implements OnInit {
       alert("Bitte formular ausüllen");
     }
 
-    this.http.post('http://localhost:8080/shots', {team: this.teamId, amount: this.amount}).pipe(
+    this.http.post(`http://${BACKEND_HOST}:8080/shots`, {team: this.teamId, amount: this.amount}).pipe(
       first()
     ).subscribe(result => {
       if (result) {

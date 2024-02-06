@@ -4,6 +4,7 @@ import {BehaviorSubject, first, map, withLatestFrom} from "rxjs";
 import {Team} from "../team";
 import {Shot} from "../shot";
 import {Rate} from "../rate";
+import {BACKEND_HOST} from "../constants";
 
 @Component({
   selector: 'app-overview',
@@ -47,7 +48,7 @@ export class OverviewComponent implements OnInit {
 
   loadValues(): void {
     console.log("loading");
-    this.http.get('http://localhost:8080/teams').pipe(
+    this.http.get(`http://${BACKEND_HOST}:8080/teams`).pipe(
       first(),
     ).subscribe((teams: any) => this.teams$.next(teams));
   }
