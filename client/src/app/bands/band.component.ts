@@ -57,8 +57,13 @@ export class BandComponent implements OnInit {
       endDate.setDate(endDate.getDate() + 1);
     }
 
+    const startDate2 = new Date(startDate);
+    startDate2.setDate(startDate2.getDate() - 1);
+    const endDate2 = new Date(endDate);
+    endDate2.setDate(endDate2.getDate() - 1);
+
     return this.now$.pipe(
-      map(now => now > startDate && now < endDate)
+      map(now => (now > startDate && now < endDate) || (now > startDate2 && now < endDate2))
     );
   }
 }
