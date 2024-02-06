@@ -17,7 +17,7 @@ export class BandComponent implements OnInit {
   public stritteraeWildsaeu$ = this.isShow('22:28', '22:52', false);
   public bohneschraenzer$ = this.isShow('22:58', '23:22', false);
   public fuedlichnuebler$ = this.isShow('23:28', '23:52', false);
-  public chrottaeSchliffer$ = this.isShow('23:58', '0:22', false);
+  public chrottaeSchliffer$ = this.isShow('23:58', '0:22', true);
   public chlaebberPfludde$ = this.isShow('0:28', '0:52', false);
   public turboSchnaeggae$ = this.isShow('0:58', '1:22', false);
 
